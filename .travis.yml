@@ -35,7 +35,7 @@ script:
   - cmake .
   - cmake --build .
   - cmake --build . --target package
-  - doxygen Doxyfile
+  #- doxygen Doxyfile
   - ./test/tb_geditor
 deploy:
   provider: script
@@ -43,9 +43,9 @@ deploy:
   script:
   - curl -T prj_geditor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ucdandrey:$BINTRAY_API_KEY "https://api.bintray.com/content/cda/otus-cpp/prj_geditor/$TRAVIS_BUILD_NUMBER/prj_geditor-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: master
+  #provider: pages
+  #skip_cleanup: true
+  #github_token: $GITHUB_TOKEN
+  #keep_history: true
+  #on:
+  #  branch: master
