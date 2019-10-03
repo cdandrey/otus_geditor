@@ -1,5 +1,4 @@
 #include "editor.h"
-#include <iostream>
 #include <string>
 #include <cassert>
 
@@ -69,6 +68,12 @@ int main()
                 std::cout << C_HELP_SHAPES << std::endl;
             }
             
+        }
+        else if (cmd == "help")
+        {
+            std::cout << "Commands:" << std::endl;
+            std::cout << C_HELP << std::endl;
+            std::cout << C_HELP_SHAPES << std::endl;
         }
         else if (cmd == "exit")
             exit = true;
