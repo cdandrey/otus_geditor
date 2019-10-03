@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.2)
 
 set(THIS geditor)
 set(SOURCES main.cpp)
-set(LIBS libvge)
+set(LIBS libedit)
 
 if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
     project(${THIS} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
