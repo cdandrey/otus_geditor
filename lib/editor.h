@@ -29,8 +29,10 @@ template<typename... A>
 void Editor::add(const Shape::Type &t,A... a)
 {
     if (_pcnv != nullptr)
+    {
         if (t == Shape::Type::Line)
             _pcnv->add<Shape::Type::Line>(a...);
         else if (t == Shape::Type::Circle)
             _pcnv->add<Shape::Type::Circle>(a...);
+    }
 }
