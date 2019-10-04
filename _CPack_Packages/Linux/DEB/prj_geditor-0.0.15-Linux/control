@@ -1,0 +1,9 @@
+Package: prj_geditor
+Version: 0.0.15
+Section: devel
+Priority: optional
+Architecture: amd64
+Installed-Size: 68
+Maintainer: cdandrey@gmail.com
+Description: prj_geditor built using CMake
+

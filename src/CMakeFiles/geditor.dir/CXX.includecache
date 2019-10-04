@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/travis/build/cdandrey/otus_geditor/src/main.cpp
+editor.h
+/home/travis/build/cdandrey/otus_geditor/src/editor.h
+string
+-
+cassert
+-
+
+src/../lib/canvas.h
+shape.h
+src/../lib/shape.h
+vector
+-
+tuple
+-
+
+src/../lib/editor.h
+canvas.h
+src/../lib/canvas.h
+
+src/../lib/point.h
+iostream
+-
+
+src/../lib/shape.h
+point.h
+src/../lib/point.h
+cassert
+-
+

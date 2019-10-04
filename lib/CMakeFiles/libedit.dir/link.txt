@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibedit.a  CMakeFiles/libedit.dir/point.cpp.o CMakeFiles/libedit.dir/shape.cpp.o CMakeFiles/libedit.dir/canvas.cpp.o CMakeFiles/libedit.dir/editor.cpp.o
+/usr/bin/ranlib liblibedit.a

@@ -1,0 +1,1 @@
+/usr/bin/g++-9    -rdynamic CMakeFiles/geditor.dir/main.cpp.o  -o geditor ../lib/liblibedit.a 

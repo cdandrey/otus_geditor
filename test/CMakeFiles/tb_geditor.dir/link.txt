@@ -1,0 +1,1 @@
+/usr/bin/g++-9    -rdynamic CMakeFiles/tb_geditor.dir/tb_geditor.cpp.o  -o tb_geditor -Wl,-Bstatic -lgtest -lgtest_main -Wl,-Bdynamic -lpthread ../lib/liblibedit.a 
