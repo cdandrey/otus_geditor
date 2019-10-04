@@ -31,8 +31,10 @@ void Editor::add(const Shape::Type &t,A... a)
     if (_pcnv != nullptr)
     {
         if (t == Shape::Type::Line)
-            _pcnv->add<Shape::Type::Line>(a...);
+            _pcnv->add(new ShapeLine(a...));
         else if (t == Shape::Type::Circle)
-            _pcnv->add<Shape::Type::Circle>(a...);
+            _pcnv->add(new ShapeCircle(a...));
+        else
+            std::cout << "Unknow type of shape" << std::endl;
     }
 }

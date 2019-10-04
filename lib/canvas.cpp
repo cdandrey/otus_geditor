@@ -7,6 +7,17 @@ Canvas::~Canvas()
 }
 //--------------------------------------------------
 
+void Canvas::add(Shape *p)
+{
+    if (p != nullptr)
+    {
+        _sh.push_back(p);
+        _sh.at(_sh.size() - 1)->show();
+    }
+}
+//-----------------------------------------------------------------
+
+
 void Canvas::remove(const Point& p)
 {
     for (auto it = _sh.begin(); it != _sh.end(); ++it)
