@@ -2,6 +2,7 @@
 
 #include "shape.h"
 #include <vector>
+#include <tuple>
 
 class Canvas
 {
@@ -25,9 +26,15 @@ class Canvas
         template<Shape::Type T,typename... A>
         Shape *create(A... a)
         {
-            if constexpr (T == Shape::Type::Line)
+            std::tuple<A...> t = std::make_tuple(a...);
+
+            if constexpr (   T == Shape::Type::Line
+                          && std::is_same<std::get<0>(t),Point>::value 
+                          && std::is_same<std::get<1>(t),Point>::value)
                 return new ShapeLine(a...);
-            else if constexpr (T == Shape::Type::Circle)
+            else if constexpr (   T == Shape::Type::Circle 
+                               && std::is_same<std::get<0>(t),Point>::value 
+                               && std::is_same<std::get<1>(t),int>::value)
                 return new ShapeCircle(a...);
             else
                 return nullptr;
