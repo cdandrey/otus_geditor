@@ -14,7 +14,7 @@ class Editor
         void exp(const std::string&);
 
         template<typename... A>
-        void add(const Shape::Type& t,A... a);
+        void add(const Shape::Type&,A... a);
 
         void remove(const Point& p);
 
@@ -26,8 +26,11 @@ class Editor
 
 
 template<typename... A>
-void Editor::add(const Shape::Type& t,A... a)
+void Editor::add(const Shape::Type &t,A... a)
 {
     if (_pcnv != nullptr)
-        _pcnv->add(t,a...);
+        if (t == Shape::Type::Line)
+            _pcnv->add<Shape::Type::Line>(a...);
+        else if (t == Shape::Type::Circle)
+            _pcnv->add<Shape::Type::Circle>(a...);
 }

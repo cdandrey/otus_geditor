@@ -10,8 +10,8 @@ class Canvas
         Canvas() = default;
         ~Canvas();
 
-        template<typename... A>
-        void add(const Shape::Type&,A...);
+        template<Shape::Type T,typename... A>
+        void add(A...);
 
         void remove(const Point&);
 
@@ -21,20 +21,25 @@ class Canvas
     private:
     
         std::vector<Shape*> _sh;
+
+        template<Shape::Type T,typename... A>
+        Shape *create(A... a)
+        {
+            if constexpr (T == Shape::Type::Line)
+                return new ShapeLine(a...);
+            else if constexpr (T == Shape::Type::Circle)
+                return new ShapeCircle(a...);
+            else
+                return nullptr;
+            
+        }
 };
 //-----------------------------------------------------------------
 
-template<typename... A>
-void Canvas::add(const Shape::Type& t,A... a)
+template<Shape::Type T,typename... A>
+void Canvas::add(A... a)
 {
-    Shape *p;
-
-    if (t == Shape::Type::Line)
-        p = new ShapeLine(a...);
-    else if (t == Shape::Type::Circle)
-        p = new ShapeCircle(a...);
-    else
-        p = nullptr;
+    Shape *p = create<T>(a...);
 
     if (p != nullptr)
     {
