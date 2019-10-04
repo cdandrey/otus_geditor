@@ -29,12 +29,12 @@ class Canvas
             std::tuple<A...> t = std::make_tuple(a...);
 
             if constexpr (   T == Shape::Type::Line
-                          && std::is_same<std::get<0>(t),Point>::value 
-                          && std::is_same<std::get<1>(t),Point>::value)
+                          && std::is_same<std::decltype(std::get<0>(t)),Point>::value 
+                          && std::is_same<std::decltype(std::get<1>(t)),Point>::value)
                 return new ShapeLine(a...);
             else if constexpr (   T == Shape::Type::Circle 
-                               && std::is_same<std::get<0>(t),Point>::value 
-                               && std::is_same<std::get<1>(t),int>::value)
+                               && std::is_same<std::decltype(std::get<0>(t)),Point>::value 
+                               && std::is_same<std::decltype(std::get<1>(t)),int>::value)
                 return new ShapeCircle(a...);
             else
                 return nullptr;
