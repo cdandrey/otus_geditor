@@ -104,6 +104,6 @@ bool ShapeCircle::inhere(const Point& p)
 
 std::ostream& operator << (std::ostream& os,const ShapeCircle& sh)
 {
-    return os << "circle center: " << sh._center << " radius: " << sh._radius;
+    return os << "circle: center: " << sh._center << " radius: " << sh._radius;
 }
 //---------------------------------------------------------
