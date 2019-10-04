@@ -22,6 +22,9 @@ class ShapeLine : public Shape
 {
     public:
 
+        template<typename... A>
+        explicit ShapeLine(A...){}
+
         ShapeLine(const Point& begin, const Point& end);
 
         ~ShapeLine();
@@ -45,6 +48,9 @@ class ShapeLine : public Shape
 class ShapeCircle : public Shape
 {
     public:
+
+        template<typename... A>
+        explicit ShapeCircle(A...){}
 
         ShapeCircle(const Point& center,int radius);
 
