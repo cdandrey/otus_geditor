@@ -29,5 +29,12 @@ template<typename... A>
 void Editor::add(const Shape::Type& t,A... a)
 {
     if (_pcnv != nullptr)
-        _pcnv->add(t,a...);
+    {
+        if (t == Shape::Type::Line)
+            _pcnv->add(new ShapeLine(a...));
+        else if (t == Shape::Type::Circle)
+            _pcnv->add(new ShapeCircle(a...));
+        else
+            std::cout << "Unknow type of shape" << std::endl;
+    }
 }
